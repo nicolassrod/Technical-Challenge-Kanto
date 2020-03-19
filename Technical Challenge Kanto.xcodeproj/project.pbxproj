@@ -3,10 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37816F13242139DB009733E5 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37816F12242139DB009733E5 /* ProfileTableViewCell.swift */; };
+		37816F1524213F8A009733E5 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37816F1424213F8A009733E5 /* ProfileTableViewController.swift */; };
+		37816F1824214E80009733E5 /* PrimaryUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37816F1724214E80009733E5 /* PrimaryUIButton.swift */; };
+		37816F1C24218B62009733E5 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37816F1B24218B62009733E5 /* Profile.swift */; };
+		37816F1F242192CB009733E5 /* GetProfilesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37816F1E242192CB009733E5 /* GetProfilesUseCase.swift */; };
+		37816F22242193EC009733E5 /* ProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37816F21242193EC009733E5 /* ProfileRepository.swift */; };
+		37816F2624219541009733E5 /* DefaultProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37816F2524219541009733E5 /* DefaultProfileRepository.swift */; };
+		37816F282421ACBE009733E5 /* ProfileContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37816F272421ACBE009733E5 /* ProfileContentTableViewCell.swift */; };
+		37956148242353D600E7C385 /* EditProfileView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37956147242353D600E7C385 /* EditProfileView.storyboard */; };
+		3795614A242359E200E7C385 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37956149242359E200E7C385 /* EditProfileViewController.swift */; };
 		37C20AD6241FFA8500B62B6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C20AD5241FFA8500B62B6C /* AppDelegate.swift */; };
 		37C20AD8241FFA8500B62B6C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C20AD7241FFA8500B62B6C /* SceneDelegate.swift */; };
 		37C20ADA241FFA8500B62B6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C20AD9241FFA8500B62B6C /* ViewController.swift */; };
@@ -15,6 +25,7 @@
 		37C20AE2241FFA8900B62B6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37C20AE0241FFA8900B62B6C /* LaunchScreen.storyboard */; };
 		37C20AED241FFA8900B62B6C /* Technical_Challenge_KantoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C20AEC241FFA8900B62B6C /* Technical_Challenge_KantoTests.swift */; };
 		37C20AF8241FFA8900B62B6C /* Technical_Challenge_KantoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C20AF7241FFA8900B62B6C /* Technical_Challenge_KantoUITests.swift */; };
+		37EC47E12421BA9000806A81 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 37EC47E02421BA9000806A81 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +46,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37816F12242139DB009733E5 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		37816F1424213F8A009733E5 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		37816F1724214E80009733E5 /* PrimaryUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryUIButton.swift; sourceTree = "<group>"; };
+		37816F1B24218B62009733E5 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		37816F1E242192CB009733E5 /* GetProfilesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProfilesUseCase.swift; sourceTree = "<group>"; };
+		37816F21242193EC009733E5 /* ProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepository.swift; sourceTree = "<group>"; };
+		37816F2524219541009733E5 /* DefaultProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultProfileRepository.swift; sourceTree = "<group>"; };
+		37816F272421ACBE009733E5 /* ProfileContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentTableViewCell.swift; sourceTree = "<group>"; };
+		37956147242353D600E7C385 /* EditProfileView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfileView.storyboard; sourceTree = "<group>"; };
+		37956149242359E200E7C385 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		37C20AD2241FFA8500B62B6C /* Technical Challenge Kanto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Technical Challenge Kanto.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37C20AD5241FFA8500B62B6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37C20AD7241FFA8500B62B6C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37EC47E12421BA9000806A81 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +98,94 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37816F102421375A009733E5 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				37816F112421399B009733E5 /* Profile */,
+				37956146242353A700E7C385 /* EditProfile */,
+				37816F1624214E44009733E5 /* Common */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		37816F112421399B009733E5 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				37C20ADB241FFA8500B62B6C /* Main.storyboard */,
+				37816F12242139DB009733E5 /* ProfileTableViewCell.swift */,
+				37816F1424213F8A009733E5 /* ProfileTableViewController.swift */,
+				37816F272421ACBE009733E5 /* ProfileContentTableViewCell.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		37816F1624214E44009733E5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				37816F1724214E80009733E5 /* PrimaryUIButton.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		37816F1924218B38009733E5 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				37816F1A24218B46009733E5 /* Entities */,
+				37816F1D242192A2009733E5 /* UserCases */,
+				37816F20242193CD009733E5 /* Repositories */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		37816F1A24218B46009733E5 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				37816F1B24218B62009733E5 /* Profile.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		37816F1D242192A2009733E5 /* UserCases */ = {
+			isa = PBXGroup;
+			children = (
+				37816F1E242192CB009733E5 /* GetProfilesUseCase.swift */,
+			);
+			path = UserCases;
+			sourceTree = "<group>";
+		};
+		37816F20242193CD009733E5 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				37816F21242193EC009733E5 /* ProfileRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		37816F23242194B0009733E5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				37816F24242194CD009733E5 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		37816F24242194CD009733E5 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				37816F2524219541009733E5 /* DefaultProfileRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		37956146242353A700E7C385 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				37956147242353D600E7C385 /* EditProfileView.storyboard */,
+				37956149242359E200E7C385 /* EditProfileViewController.swift */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
 		37C20AC9241FFA8500B62B6C = {
 			isa = PBXGroup;
 			children = (
@@ -99,10 +209,12 @@
 		37C20AD4241FFA8500B62B6C /* Technical Challenge Kanto */ = {
 			isa = PBXGroup;
 			children = (
+				37816F1924218B38009733E5 /* Domain */,
+				37816F102421375A009733E5 /* Presentation */,
+				37816F23242194B0009733E5 /* Data */,
 				37C20AD5241FFA8500B62B6C /* AppDelegate.swift */,
 				37C20AD7241FFA8500B62B6C /* SceneDelegate.swift */,
 				37C20AD9241FFA8500B62B6C /* ViewController.swift */,
-				37C20ADB241FFA8500B62B6C /* Main.storyboard */,
 				37C20ADE241FFA8900B62B6C /* Assets.xcassets */,
 				37C20AE0241FFA8900B62B6C /* LaunchScreen.storyboard */,
 				37C20AE3241FFA8900B62B6C /* Info.plist */,
@@ -144,6 +256,9 @@
 			dependencies = (
 			);
 			name = "Technical Challenge Kanto";
+			packageProductDependencies = (
+				37EC47E02421BA9000806A81 /* Kingfisher */,
+			);
 			productName = "Technical Challenge Kanto";
 			productReference = 37C20AD2241FFA8500B62B6C /* Technical Challenge Kanto.app */;
 			productType = "com.apple.product-type.application";
@@ -216,6 +331,9 @@
 				Base,
 			);
 			mainGroup = 37C20AC9241FFA8500B62B6C;
+			packageReferences = (
+				37EC47DF2421BA9000806A81 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 37C20AD3241FFA8500B62B6C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -235,6 +353,7 @@
 				37C20AE2241FFA8900B62B6C /* LaunchScreen.storyboard in Resources */,
 				37C20ADF241FFA8900B62B6C /* Assets.xcassets in Resources */,
 				37C20ADD241FFA8500B62B6C /* Main.storyboard in Resources */,
+				37956148242353D600E7C385 /* EditProfileView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +378,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37816F282421ACBE009733E5 /* ProfileContentTableViewCell.swift in Sources */,
+				37816F1F242192CB009733E5 /* GetProfilesUseCase.swift in Sources */,
+				37816F2624219541009733E5 /* DefaultProfileRepository.swift in Sources */,
 				37C20ADA241FFA8500B62B6C /* ViewController.swift in Sources */,
+				37816F1524213F8A009733E5 /* ProfileTableViewController.swift in Sources */,
+				37816F1824214E80009733E5 /* PrimaryUIButton.swift in Sources */,
+				37816F13242139DB009733E5 /* ProfileTableViewCell.swift in Sources */,
+				37816F1C24218B62009733E5 /* Profile.swift in Sources */,
+				3795614A242359E200E7C385 /* EditProfileViewController.swift in Sources */,
+				37816F22242193EC009733E5 /* ProfileRepository.swift in Sources */,
 				37C20AD6241FFA8500B62B6C /* AppDelegate.swift in Sources */,
 				37C20AD8241FFA8500B62B6C /* SceneDelegate.swift in Sources */,
 			);
@@ -590,6 +718,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		37EC47DF2421BA9000806A81 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.13.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		37EC47E02421BA9000806A81 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37EC47DF2421BA9000806A81 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 37C20ACA241FFA8500B62B6C /* Project object */;
 }

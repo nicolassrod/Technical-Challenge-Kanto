@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bW2-Vf-f5S">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Edit Profile View Controller-->
+        <scene sceneID="7pY-rs-Grn">
+            <objects>
+                <viewController id="bW2-Vf-f5S" customClass="EditProfileViewController" customModule="Technical_Challenge_Kanto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1yl-ac-VC0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="Rd3-AC-q7B">
+                                <rect key="frame" x="0.0" y="94" width="414" height="342"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kanto-logo" translatesAutoresizingMaskIntoConstraints="NO" id="obR-20-n5K">
+                                        <rect key="frame" x="107" y="0.0" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="obR-20-n5K" secondAttribute="height" multiplier="1:1" id="hbO-lX-HY0"/>
+                                            <constraint firstAttribute="width" constant="200" id="mkT-x8-1AG"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="100"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTx-eF-clx" customClass="PrimaryUIButton" customModule="Technical_Challenge_Kanto" customModuleProvider="target">
+                                        <rect key="frame" x="107" y="241" width="200" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="qFS-tG-Gfb"/>
+                                        </constraints>
+                                        <state key="normal" title="Edit Photo">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="editPhoto:" destination="bW2-Vf-f5S" eventType="touchUpInside" id="e7u-JM-oRY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HO1-hv-pE7" customClass="PrimaryUIButton" customModule="Technical_Challenge_Kanto" customModuleProvider="target">
+                                        <rect key="frame" x="107" y="312" width="200" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="yup-KV-3fg"/>
+                                        </constraints>
+                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <state key="normal" title="Upload New Photo">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="uploadNewPhotoButton:" destination="bW2-Vf-f5S" eventType="touchUpInside" id="2Tf-9v-KFf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Rd3-AC-q7B" firstAttribute="centerX" secondItem="1yl-ac-VC0" secondAttribute="centerX" id="FlX-5j-Yb3"/>
+                            <constraint firstItem="Rd3-AC-q7B" firstAttribute="leading" secondItem="vXW-SU-OTc" secondAttribute="leading" id="Jle-q9-Nju"/>
+                            <constraint firstItem="vXW-SU-OTc" firstAttribute="trailing" secondItem="Rd3-AC-q7B" secondAttribute="trailing" id="a1b-b0-E7e"/>
+                            <constraint firstItem="Rd3-AC-q7B" firstAttribute="top" secondItem="vXW-SU-OTc" secondAttribute="top" constant="50" id="cuI-VW-Y4C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vXW-SU-OTc"/>
+                    </view>
+                    <connections>
+                        <outlet property="profileImageView" destination="obR-20-n5K" id="aoK-TF-so1"/>
+                        <outlet property="uploadNewPhotoUIButton" destination="HO1-hv-pE7" id="6x7-bG-8T1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TrQ-Zq-fxM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="72" y="100"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="kanto-logo" width="360" height="360"/>
+    </resources>
+</document>
