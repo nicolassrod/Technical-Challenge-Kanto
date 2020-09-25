@@ -24,26 +24,7 @@
 		37C20ADD241FFA8500B62B6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37C20ADB241FFA8500B62B6C /* Main.storyboard */; };
 		37C20ADF241FFA8900B62B6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37C20ADE241FFA8900B62B6C /* Assets.xcassets */; };
 		37C20AE2241FFA8900B62B6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37C20AE0241FFA8900B62B6C /* LaunchScreen.storyboard */; };
-		37C20AED241FFA8900B62B6C /* Technical_Challenge_KantoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C20AEC241FFA8900B62B6C /* Technical_Challenge_KantoTests.swift */; };
-		37C20AF8241FFA8900B62B6C /* Technical_Challenge_KantoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C20AF7241FFA8900B62B6C /* Technical_Challenge_KantoUITests.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		37C20AE9241FFA8900B62B6C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 37C20ACA241FFA8500B62B6C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 37C20AD1241FFA8500B62B6C;
-			remoteInfo = "Technical Challenge Kanto";
-		};
-		37C20AF4241FFA8900B62B6C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 37C20ACA241FFA8500B62B6C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 37C20AD1241FFA8500B62B6C;
-			remoteInfo = "Technical Challenge Kanto";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		37816F12242139DB009733E5 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
@@ -64,12 +45,6 @@
 		37C20ADE241FFA8900B62B6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37C20AE1241FFA8900B62B6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37C20AE3241FFA8900B62B6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		37C20AE8241FFA8900B62B6C /* Technical Challenge KantoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Technical Challenge KantoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		37C20AEC241FFA8900B62B6C /* Technical_Challenge_KantoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Technical_Challenge_KantoTests.swift; sourceTree = "<group>"; };
-		37C20AEE241FFA8900B62B6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		37C20AF3241FFA8900B62B6C /* Technical Challenge KantoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Technical Challenge KantoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		37C20AF7241FFA8900B62B6C /* Technical_Challenge_KantoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Technical_Challenge_KantoUITests.swift; sourceTree = "<group>"; };
-		37C20AF9241FFA8900B62B6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,20 +53,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				37726FB7251D985A009409F2 /* Kingfisher in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		37C20AE5241FFA8900B62B6C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		37C20AF0241FFA8900B62B6C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,8 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				37C20AD4241FFA8500B62B6C /* Technical Challenge Kanto */,
-				37C20AEB241FFA8900B62B6C /* Technical Challenge KantoTests */,
-				37C20AF6241FFA8900B62B6C /* Technical Challenge KantoUITests */,
 				37C20AD3241FFA8500B62B6C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -200,8 +159,6 @@
 			isa = PBXGroup;
 			children = (
 				37C20AD2241FFA8500B62B6C /* Technical Challenge Kanto.app */,
-				37C20AE8241FFA8900B62B6C /* Technical Challenge KantoTests.xctest */,
-				37C20AF3241FFA8900B62B6C /* Technical Challenge KantoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -220,24 +177,6 @@
 				37C20AE3241FFA8900B62B6C /* Info.plist */,
 			);
 			path = "Technical Challenge Kanto";
-			sourceTree = "<group>";
-		};
-		37C20AEB241FFA8900B62B6C /* Technical Challenge KantoTests */ = {
-			isa = PBXGroup;
-			children = (
-				37C20AEC241FFA8900B62B6C /* Technical_Challenge_KantoTests.swift */,
-				37C20AEE241FFA8900B62B6C /* Info.plist */,
-			);
-			path = "Technical Challenge KantoTests";
-			sourceTree = "<group>";
-		};
-		37C20AF6241FFA8900B62B6C /* Technical Challenge KantoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				37C20AF7241FFA8900B62B6C /* Technical_Challenge_KantoUITests.swift */,
-				37C20AF9241FFA8900B62B6C /* Info.plist */,
-			);
-			path = "Technical Challenge KantoUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,42 +202,6 @@
 			productReference = 37C20AD2241FFA8500B62B6C /* Technical Challenge Kanto.app */;
 			productType = "com.apple.product-type.application";
 		};
-		37C20AE7241FFA8900B62B6C /* Technical Challenge KantoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 37C20AFF241FFA8900B62B6C /* Build configuration list for PBXNativeTarget "Technical Challenge KantoTests" */;
-			buildPhases = (
-				37C20AE4241FFA8900B62B6C /* Sources */,
-				37C20AE5241FFA8900B62B6C /* Frameworks */,
-				37C20AE6241FFA8900B62B6C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				37C20AEA241FFA8900B62B6C /* PBXTargetDependency */,
-			);
-			name = "Technical Challenge KantoTests";
-			productName = "Technical Challenge KantoTests";
-			productReference = 37C20AE8241FFA8900B62B6C /* Technical Challenge KantoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		37C20AF2241FFA8900B62B6C /* Technical Challenge KantoUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 37C20B02241FFA8900B62B6C /* Build configuration list for PBXNativeTarget "Technical Challenge KantoUITests" */;
-			buildPhases = (
-				37C20AEF241FFA8900B62B6C /* Sources */,
-				37C20AF0241FFA8900B62B6C /* Frameworks */,
-				37C20AF1241FFA8900B62B6C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				37C20AF5241FFA8900B62B6C /* PBXTargetDependency */,
-			);
-			name = "Technical Challenge KantoUITests";
-			productName = "Technical Challenge KantoUITests";
-			productReference = 37C20AF3241FFA8900B62B6C /* Technical Challenge KantoUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -311,14 +214,6 @@
 				TargetAttributes = {
 					37C20AD1241FFA8500B62B6C = {
 						CreatedOnToolsVersion = 11.3.1;
-					};
-					37C20AE7241FFA8900B62B6C = {
-						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = 37C20AD1241FFA8500B62B6C;
-					};
-					37C20AF2241FFA8900B62B6C = {
-						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = 37C20AD1241FFA8500B62B6C;
 					};
 				};
 			};
@@ -339,8 +234,6 @@
 			projectRoot = "";
 			targets = (
 				37C20AD1241FFA8500B62B6C /* Technical Challenge Kanto */,
-				37C20AE7241FFA8900B62B6C /* Technical Challenge KantoTests */,
-				37C20AF2241FFA8900B62B6C /* Technical Challenge KantoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -354,20 +247,6 @@
 				37C20ADF241FFA8900B62B6C /* Assets.xcassets in Resources */,
 				37C20ADD241FFA8500B62B6C /* Main.storyboard in Resources */,
 				37956148242353D600E7C385 /* EditProfileView.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		37C20AE6241FFA8900B62B6C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		37C20AF1241FFA8900B62B6C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,36 +272,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		37C20AE4241FFA8900B62B6C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				37C20AED241FFA8900B62B6C /* Technical_Challenge_KantoTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		37C20AEF241FFA8900B62B6C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				37C20AF8241FFA8900B62B6C /* Technical_Challenge_KantoUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		37C20AEA241FFA8900B62B6C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 37C20AD1241FFA8500B62B6C /* Technical Challenge Kanto */;
-			targetProxy = 37C20AE9241FFA8900B62B6C /* PBXContainerItemProxy */;
-		};
-		37C20AF5241FFA8900B62B6C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 37C20AD1241FFA8500B62B6C /* Technical Challenge Kanto */;
-			targetProxy = 37C20AF4241FFA8900B62B6C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		37C20ADB241FFA8500B62B6C /* Main.storyboard */ = {
@@ -594,90 +444,6 @@
 			};
 			name = Release;
 		};
-		37C20B00241FFA8900B62B6C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D5DZX4N5C6;
-				INFOPLIST_FILE = "Technical Challenge KantoTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nicolasr.Technical-Challenge-KantoTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Technical Challenge Kanto.app/Technical Challenge Kanto";
-			};
-			name = Debug;
-		};
-		37C20B01241FFA8900B62B6C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D5DZX4N5C6;
-				INFOPLIST_FILE = "Technical Challenge KantoTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nicolasr.Technical-Challenge-KantoTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Technical Challenge Kanto.app/Technical Challenge Kanto";
-			};
-			name = Release;
-		};
-		37C20B03241FFA8900B62B6C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D5DZX4N5C6;
-				INFOPLIST_FILE = "Technical Challenge KantoUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nicolasr.Technical-Challenge-KantoUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Technical Challenge Kanto";
-			};
-			name = Debug;
-		};
-		37C20B04241FFA8900B62B6C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D5DZX4N5C6;
-				INFOPLIST_FILE = "Technical Challenge KantoUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nicolasr.Technical-Challenge-KantoUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Technical Challenge Kanto";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -695,24 +461,6 @@
 			buildConfigurations = (
 				37C20AFD241FFA8900B62B6C /* Debug */,
 				37C20AFE241FFA8900B62B6C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		37C20AFF241FFA8900B62B6C /* Build configuration list for PBXNativeTarget "Technical Challenge KantoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				37C20B00241FFA8900B62B6C /* Debug */,
-				37C20B01241FFA8900B62B6C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		37C20B02241FFA8900B62B6C /* Build configuration list for PBXNativeTarget "Technical Challenge KantoUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				37C20B03241FFA8900B62B6C /* Debug */,
-				37C20B04241FFA8900B62B6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
