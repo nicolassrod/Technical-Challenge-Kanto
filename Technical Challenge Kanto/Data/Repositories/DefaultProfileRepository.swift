@@ -10,10 +10,12 @@ import Foundation
 import Combine
 
 struct DefaultProfileRepository: ProfileRepository {
+    private let url = URL(string: "http://www.mocky.io/v2/5e669952310000d2fc23a20e")!
+    
     func profileList() -> AnyPublisher<[ProfileWrapper], Error> {
         let urlSession = URLSession
             .shared
-            .dataTaskPublisher(for: URL(string: "http://www.mocky.io/v2/5e3a01073200006700ddfe05")!)
+            .dataTaskPublisher(for: url)
             .mapError { $0 as Error }
             .map { $0.data }
             .decode(type: [ProfileWrapper].self, decoder: JSONDecoder())

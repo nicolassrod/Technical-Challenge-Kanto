@@ -9,8 +9,8 @@
 import UIKit
 
 class EditProfileViewController: UIViewController {
-    @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var uploadNewPhotoUIButton: PrimaryUIButton!
+    @IBOutlet var profileImageView: UIImageView!
+    
     weak var profileTebleViewController: ProfileTableViewController?
     private let imagePicker = UIImagePickerController()
     
@@ -19,6 +19,15 @@ class EditProfileViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         imagePicker.delegate = self
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
+    @IBAction func cancelButton(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func editPhoto(_ sender: UIButton) {
@@ -36,10 +45,22 @@ class EditProfileViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    
-    @IBAction func uploadNewPhotoButton(_ sender: UIButton) {
-        // Todo: Send selected image to some backend 
+    @IBAction func saveButton(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func nameTextField(_ sender: UITextField) {
+        
+    }
+    
+    @IBAction func nicknameTextField(_ sender: UITextField) {
+        
+    }
+    
+    @IBAction func bioTextField(_ sender: UITextField) {
+        
+    }
+    
     
     private func openCamera() {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {

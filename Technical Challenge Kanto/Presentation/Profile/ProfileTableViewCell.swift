@@ -10,16 +10,18 @@ import UIKit
 
 @IBDesignable
 class ProfileTableViewCell: UITableViewCell {
-    @IBInspectable var degreeColor1: UIColor = UIColor.blue
-    @IBInspectable var degreeColor2: UIColor = UIColor.systemTeal
+    @IBInspectable var degreeColor1: UIColor = UIColor.purple
+    @IBInspectable var degreeColor2: UIColor = UIColor.systemPurple
     
-    @IBOutlet weak var profileAvatarImageView: UIImageView!
-    @IBOutlet weak var profileUserName: UILabel!
-    @IBOutlet weak var profileUniqueUserName: UILabel!
-    @IBOutlet weak var profileBiography: UILabel!
-    @IBOutlet weak var profileFollowers: UILabel!
-    @IBOutlet weak var profileFollowing: UILabel!
-    @IBOutlet weak var profileViews: UILabel!
+    @IBOutlet var profileAvatarImageView: UIImageView!
+    @IBOutlet var profileUserName: UILabel!
+    @IBOutlet var profileUniqueUserName: UILabel!
+    @IBOutlet var profileBiography: UILabel!
+    
+    @IBOutlet var profileStackContainer: UIStackView!
+    @IBOutlet var profileFollowers: UILabel!
+    @IBOutlet var profileFollowing: UILabel!
+    @IBOutlet var profileViews: UILabel!
     
     override func draw(_ rect: CGRect) {
         let gradient = CAGradientLayer()
@@ -30,6 +32,13 @@ class ProfileTableViewCell: UITableViewCell {
         gradient.endPoint = CGPoint(x: 1, y: 0)
         //        gradient.mask = shape
         self.contentView.layer.insertSublayer(gradient, at: 0)
+        self.profileStackContainer.isLayoutMarginsRelativeArrangement = true
+        self.profileStackContainer.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 7, leading: 20, bottom: 7, trailing: 20)
+        
+        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: 30, height: 30))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        self.layer.mask = mask
     }
     
     override func awakeFromNib() {

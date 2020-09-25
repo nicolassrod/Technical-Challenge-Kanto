@@ -10,15 +10,16 @@ import UIKit
 import AVFoundation
 
 class ProfileContentTableViewCell: UITableViewCell {
-    @IBOutlet weak var contentUserImage: UIImageView!
-    @IBOutlet weak var contentUserName: UILabel!
-    @IBOutlet weak var contentUserNickname: UILabel!
-    @IBOutlet weak var contentUserDescription: UILabel!
-    @IBOutlet weak var contentUserVideoPlayer: UIView!
+    @IBOutlet var contentUserImage: UIImageView!
+    @IBOutlet var contentUserName: UILabel!
+    @IBOutlet var contentUserNickname: UILabel!
+    @IBOutlet var contentUserDescription: UILabel!
+    @IBOutlet var contentUserVideoPlayer: UIView!
     lazy var player: AVPlayer = AVPlayer(playerItem: nil)
     lazy var playerLayer: AVPlayerLayer = {
         let playerLayer = AVPlayerLayer(player: self.player)
         playerLayer.videoGravity = .resizeAspect
+        player.volume = 0.0
         return playerLayer
     }()
     

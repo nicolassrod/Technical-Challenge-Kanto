@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37726FB7251D985A009409F2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 37726FB6251D985A009409F2 /* Kingfisher */; };
 		37816F13242139DB009733E5 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37816F12242139DB009733E5 /* ProfileTableViewCell.swift */; };
 		37816F1524213F8A009733E5 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37816F1424213F8A009733E5 /* ProfileTableViewController.swift */; };
 		37816F1824214E80009733E5 /* PrimaryUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37816F1724214E80009733E5 /* PrimaryUIButton.swift */; };
@@ -25,7 +26,6 @@
 		37C20AE2241FFA8900B62B6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37C20AE0241FFA8900B62B6C /* LaunchScreen.storyboard */; };
 		37C20AED241FFA8900B62B6C /* Technical_Challenge_KantoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C20AEC241FFA8900B62B6C /* Technical_Challenge_KantoTests.swift */; };
 		37C20AF8241FFA8900B62B6C /* Technical_Challenge_KantoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C20AF7241FFA8900B62B6C /* Technical_Challenge_KantoUITests.swift */; };
-		37EC47E12421BA9000806A81 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 37EC47E02421BA9000806A81 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37EC47E12421BA9000806A81 /* Kingfisher in Frameworks */,
+				37726FB7251D985A009409F2 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +257,7 @@
 			);
 			name = "Technical Challenge Kanto";
 			packageProductDependencies = (
-				37EC47E02421BA9000806A81 /* Kingfisher */,
+				37726FB6251D985A009409F2 /* Kingfisher */,
 			);
 			productName = "Technical Challenge Kanto";
 			productReference = 37C20AD2241FFA8500B62B6C /* Technical Challenge Kanto.app */;
@@ -332,7 +332,7 @@
 			);
 			mainGroup = 37C20AC9241FFA8500B62B6C;
 			packageReferences = (
-				37EC47DF2421BA9000806A81 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				37726FB5251D985A009409F2 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 37C20AD3241FFA8500B62B6C /* Products */;
 			projectDirPath = "";
@@ -720,20 +720,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		37EC47DF2421BA9000806A81 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		37726FB5251D985A009409F2 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.13.2;
+				minimumVersion = 5.15.4;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		37EC47E02421BA9000806A81 /* Kingfisher */ = {
+		37726FB6251D985A009409F2 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 37EC47DF2421BA9000806A81 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = 37726FB5251D985A009409F2 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
