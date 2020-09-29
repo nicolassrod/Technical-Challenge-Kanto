@@ -64,7 +64,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 <connections>
-                                                    <action selector="nameTextField:" destination="bW2-Vf-f5S" eventType="editingDidEnd" id="FTG-jm-alw"/>
+                                                    <action selector="nameTextField:" destination="bW2-Vf-f5S" eventType="editingChanged" id="rnK-ah-Db8"/>
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tck-uV-BVj">
@@ -72,7 +72,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 <connections>
-                                                    <action selector="nicknameTextField:" destination="bW2-Vf-f5S" eventType="editingDidEnd" id="Mh5-aP-Y9E"/>
+                                                    <action selector="nicknameTextField:" destination="bW2-Vf-f5S" eventType="editingChanged" id="JMd-9G-6L3"/>
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Biography" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uud-kf-kJa">
@@ -80,7 +80,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 <connections>
-                                                    <action selector="bioTextField:" destination="bW2-Vf-f5S" eventType="editingDidEnd" id="YSE-nM-xqT"/>
+                                                    <action selector="bioTextField:" destination="bW2-Vf-f5S" eventType="editingChanged" id="LqF-eX-fM1"/>
                                                 </connections>
                                             </textField>
                                         </subviews>
@@ -112,6 +112,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="biographyTextField" destination="uud-kf-kJa" id="aca-wI-FMZ"/>
+                        <outlet property="nameTextField" destination="Dxp-dA-SzR" id="62o-sJ-KYA"/>
+                        <outlet property="nickNameTextField" destination="Tck-uV-BVj" id="SZ9-7t-Iyx"/>
                         <outlet property="profileImageView" destination="obR-20-n5K" id="aoK-TF-so1"/>
                     </connections>
                 </viewController>

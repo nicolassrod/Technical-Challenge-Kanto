@@ -24,5 +24,9 @@ struct DefaultProfileRepository: ProfileRepository {
         return urlSession
     }
     
-    
+    func updateProfile(name: String, nickName: String, biography: String) {
+        UserDefaults.standard.set(name, forKey: "Username")
+        UserDefaults.standard.set(biography, forKey: "Biography")
+        UserDefaults.standard.set(nickName, forKey: "Nickname")
+    }
 }

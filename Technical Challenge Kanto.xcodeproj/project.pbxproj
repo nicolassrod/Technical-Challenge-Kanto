@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37067350252374E80038A4D9 /* UpdateProfileDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3706734F252374E80038A4D9 /* UpdateProfileDataUseCase.swift */; };
 		37726FB7251D985A009409F2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 37726FB6251D985A009409F2 /* Kingfisher */; };
 		37816F13242139DB009733E5 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37816F12242139DB009733E5 /* ProfileTableViewCell.swift */; };
 		37816F1524213F8A009733E5 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37816F1424213F8A009733E5 /* ProfileTableViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3706734F252374E80038A4D9 /* UpdateProfileDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileDataUseCase.swift; sourceTree = "<group>"; };
 		37816F12242139DB009733E5 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		37816F1424213F8A009733E5 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		37816F1724214E80009733E5 /* PrimaryUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryUIButton.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				37816F1E242192CB009733E5 /* GetProfilesUseCase.swift */,
+				3706734F252374E80038A4D9 /* UpdateProfileDataUseCase.swift */,
 			);
 			path = UserCases;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				37816F2624219541009733E5 /* DefaultProfileRepository.swift in Sources */,
 				37C20ADA241FFA8500B62B6C /* ViewController.swift in Sources */,
 				37816F1524213F8A009733E5 /* ProfileTableViewController.swift in Sources */,
+				37067350252374E80038A4D9 /* UpdateProfileDataUseCase.swift in Sources */,
 				37816F1824214E80009733E5 /* PrimaryUIButton.swift in Sources */,
 				37816F13242139DB009733E5 /* ProfileTableViewCell.swift in Sources */,
 				37816F1C24218B62009733E5 /* Profile.swift in Sources */,

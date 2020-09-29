@@ -101,8 +101,8 @@ extension ProfileTableViewController {
             <Section, ProfileWrapper>(tableView: tableView, cellProvider: { (tableView, indexPath, profileRow) -> UITableViewCell? in
                 if indexPath.section == 0 {
                     let cell = tableView.dequeueReusableCell(withIdentifier: self.cellProfileRowIdentifier, for: indexPath) as! ProfileTableViewCell
-                    cell.profileUserName.text = profileRow.profile.name
-                    cell.profileBiography.text = profileRow.description
+                    cell.profileUserName.text = UserDefaults.standard.string(forKey: "Username") ?? profileRow.profile.name
+                    cell.profileBiography.text = UserDefaults.standard.string(forKey: "Biography") ?? profileRow.description
                     cell.profileFollowers.text = "5000"
                     cell.profileFollowing.text = "500"
                     cell.profileViews.text = "321,115"

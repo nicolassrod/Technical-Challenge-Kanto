@@ -9,13 +9,27 @@
 import UIKit
 
 class EditProfileViewController: UIViewController {
+    private var profile = DefaultUpdateProfileUseCase(profileRepository: DefaultProfileRepository())
+    
     @IBOutlet var profileImageView: UIImageView!
+    
+    @IBOutlet var nameTextField: UITextField!
+    @IBOutlet var nickNameTextField: UITextField!
+    @IBOutlet var biographyTextField: UITextField!
     
     weak var profileTebleViewController: ProfileTableViewController?
     private let imagePicker = UIImagePickerController()
     
+    private var userName = UserDefaults.standard.string(forKey: "Username") ?? ""
+    private var biography = UserDefaults.standard.string(forKey: "Biography") ?? ""
+    private var nickname = UserDefaults.standard.string(forKey: "Nickname") ?? ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        nameTextField.text = userName
+        nickNameTextField.text = nickname
+        biographyTextField.text = biography
         
         // Do any additional setup after loading the view.
         imagePicker.delegate = self
@@ -46,21 +60,26 @@ class EditProfileViewController: UIViewController {
     }
     
     @IBAction func saveButton(_ sender: UIBarButtonItem) {
+        profile.update(name: self.userName, nickName: self.nickname, biography: self.biography)
+        
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func nameTextField(_ sender: UITextField) {
-        
+        guard let text = sender.text else { return }
+        self.userName = text
     }
     
     @IBAction func nicknameTextField(_ sender: UITextField) {
-        
+        guard let text = sender.text else { return }
+        self.nickname = text
+       
     }
     
     @IBAction func bioTextField(_ sender: UITextField) {
-        
+        guard let text = sender.text else { return }
+        self.biography = text
     }
-    
     
     private func openCamera() {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {

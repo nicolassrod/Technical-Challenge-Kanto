@@ -11,4 +11,5 @@ import Combine
 
 protocol ProfileRepository {
     func profileList() -> AnyPublisher<[ProfileWrapper], Error>
+    func updateProfile(name: String, nickName: String, biography: String)
 }
