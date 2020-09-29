@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol EditProfileDelegate: class {
+    func profileEditionDidEnd()
+}
+
 class EditProfileViewController: UIViewController {
+    weak var delegate: EditProfileDelegate?
+    
     private var profile = DefaultUpdateProfileUseCase(profileRepository: DefaultProfileRepository())
     
     @IBOutlet var profileImageView: UIImageView!
@@ -61,7 +67,7 @@ class EditProfileViewController: UIViewController {
     
     @IBAction func saveButton(_ sender: UIBarButtonItem) {
         profile.update(name: self.userName, nickName: self.nickname, biography: self.biography)
-        
+        delegate?.profileEditionDidEnd()
         self.dismiss(animated: true, completion: nil)
     }
     

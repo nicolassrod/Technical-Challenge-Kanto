@@ -8,8 +8,13 @@
 
 import UIKit
 
+protocol ProfileCellDelegate: class {
+    func callSegueFromCell()
+}
+
 @IBDesignable
 class ProfileTableViewCell: UITableViewCell {
+    weak var delegate: ProfileCellDelegate?
     @IBInspectable var degreeColor1: UIColor = UIColor.purple
     @IBInspectable var degreeColor2: UIColor = UIColor.systemPurple
     
@@ -39,6 +44,10 @@ class ProfileTableViewCell: UITableViewCell {
         let mask = CAShapeLayer()
         mask.path = path.cgPath
         self.layer.mask = mask
+    }
+    
+    @IBAction func EditProfileButton(_ sender: UIButton) {
+        delegate?.callSegueFromCell()
     }
     
     override func awakeFromNib() {

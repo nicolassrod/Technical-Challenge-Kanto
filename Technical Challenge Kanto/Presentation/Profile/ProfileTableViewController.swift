@@ -10,7 +10,7 @@ import UIKit
 import Combine
 import Kingfisher
 
-class ProfileTableViewController: UITableViewController {
+class ProfileTableViewController: UITableViewController, ProfileCellDelegate, EditProfileDelegate {
     private let cellProfileRowIdentifier = "profile_row"
     private let cellProfileContentIdentifier = "profile_content_row"
     private var cancellable: AnyCancellable?
@@ -92,6 +92,22 @@ class ProfileTableViewController: UITableViewController {
         }
     }
     
+    // Delegates
+    func callSegueFromCell() {
+        performSegue(withIdentifier: "goToEditProfile", sender: nil)
+    }
+    
+    func profileEditionDidEnd() {
+        tableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToEditProfile" {
+            guard let navigationController = segue.destination as? UINavigationController else { return }
+            guard let editprofileVC = navigationController.topViewController as? EditProfileViewController else { return }
+            editprofileVC.delegate = self
+        }
+    }
 }
 
 // MARK: - Table view data source
@@ -106,6 +122,7 @@ extension ProfileTableViewController {
                     cell.profileFollowers.text = "5000"
                     cell.profileFollowing.text = "500"
                     cell.profileViews.text = "321,115"
+                    cell.delegate = self
                     return cell
                 } else if indexPath.section == 1 {
                     let cell = tableView.dequeueReusableCell(withIdentifier: self.cellProfileContentIdentifier, for: indexPath) as! ProfileContentTableViewCell
