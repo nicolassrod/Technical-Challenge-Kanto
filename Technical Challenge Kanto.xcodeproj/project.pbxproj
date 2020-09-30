@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		37067350252374E80038A4D9 /* UpdateProfileDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3706734F252374E80038A4D9 /* UpdateProfileDataUseCase.swift */; };
 		37726FB7251D985A009409F2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 37726FB6251D985A009409F2 /* Kingfisher */; };
-		37816F13242139DB009733E5 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37816F12242139DB009733E5 /* ProfileTableViewCell.swift */; };
 		37816F1524213F8A009733E5 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37816F1424213F8A009733E5 /* ProfileTableViewController.swift */; };
 		37816F1824214E80009733E5 /* PrimaryUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37816F1724214E80009733E5 /* PrimaryUIButton.swift */; };
 		37816F1C24218B62009733E5 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37816F1B24218B62009733E5 /* Profile.swift */; };
@@ -25,11 +24,12 @@
 		37C20ADD241FFA8500B62B6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37C20ADB241FFA8500B62B6C /* Main.storyboard */; };
 		37C20ADF241FFA8900B62B6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37C20ADE241FFA8900B62B6C /* Assets.xcassets */; };
 		37C20AE2241FFA8900B62B6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37C20AE0241FFA8900B62B6C /* LaunchScreen.storyboard */; };
+		37CCD8AC25247C7600605F8F /* ProfileCustomNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CCD8AB25247C7600605F8F /* ProfileCustomNavigationViewController.swift */; };
+		37CCD8B22524883B00605F8F /* ProfileUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CCD8B12524883B00605F8F /* ProfileUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3706734F252374E80038A4D9 /* UpdateProfileDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileDataUseCase.swift; sourceTree = "<group>"; };
-		37816F12242139DB009733E5 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		37816F1424213F8A009733E5 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		37816F1724214E80009733E5 /* PrimaryUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryUIButton.swift; sourceTree = "<group>"; };
 		37816F1B24218B62009733E5 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -47,6 +47,8 @@
 		37C20ADE241FFA8900B62B6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37C20AE1241FFA8900B62B6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37C20AE3241FFA8900B62B6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37CCD8AB25247C7600605F8F /* ProfileCustomNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCustomNavigationViewController.swift; sourceTree = "<group>"; };
+		37CCD8B12524883B00605F8F /* ProfileUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,9 +77,10 @@
 			isa = PBXGroup;
 			children = (
 				37C20ADB241FFA8500B62B6C /* Main.storyboard */,
-				37816F12242139DB009733E5 /* ProfileTableViewCell.swift */,
+				37CCD8B12524883B00605F8F /* ProfileUIView.swift */,
 				37816F1424213F8A009733E5 /* ProfileTableViewController.swift */,
 				37816F272421ACBE009733E5 /* ProfileContentTableViewCell.swift */,
+				37CCD8AB25247C7600605F8F /* ProfileCustomNavigationViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -263,11 +266,12 @@
 				37816F282421ACBE009733E5 /* ProfileContentTableViewCell.swift in Sources */,
 				37816F1F242192CB009733E5 /* GetProfilesUseCase.swift in Sources */,
 				37816F2624219541009733E5 /* DefaultProfileRepository.swift in Sources */,
+				37CCD8B22524883B00605F8F /* ProfileUIView.swift in Sources */,
 				37C20ADA241FFA8500B62B6C /* ViewController.swift in Sources */,
 				37816F1524213F8A009733E5 /* ProfileTableViewController.swift in Sources */,
+				37CCD8AC25247C7600605F8F /* ProfileCustomNavigationViewController.swift in Sources */,
 				37067350252374E80038A4D9 /* UpdateProfileDataUseCase.swift in Sources */,
 				37816F1824214E80009733E5 /* PrimaryUIButton.swift in Sources */,
-				37816F13242139DB009733E5 /* ProfileTableViewCell.swift in Sources */,
 				37816F1C24218B62009733E5 /* Profile.swift in Sources */,
 				3795614A242359E200E7C385 /* EditProfileViewController.swift in Sources */,
 				37816F22242193EC009733E5 /* ProfileRepository.swift in Sources */,

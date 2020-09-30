@@ -14,94 +14,107 @@ class ProfileTableViewController: UITableViewController, ProfileCellDelegate, Ed
     private let cellProfileRowIdentifier = "profile_row"
     private let cellProfileContentIdentifier = "profile_content_row"
     private var cancellable: AnyCancellable?
-    @IBOutlet weak var PanGestureRecognizer: UIPanGestureRecognizer!
     
-    var profileCellIsReady = false
-    var lastContentOffset: CGFloat = 0
+    @IBOutlet var profileView: ProfileUIView!
+    @IBOutlet var profileHeigth: NSLayoutConstraint!
+    @IBOutlet var profileTop: NSLayoutConstraint!
+    @IBOutlet var profileBotton: NSLayoutConstraint!
+    
+    var originalHeight: CGFloat!
+    var navBarHeigth: CGFloat!
+    
     var userName: String = ""
     
     private lazy var dataSource = makeDataSource()
     
     enum Section: CaseIterable {
-        case profile
         case content
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        originalHeight = profileHeigth.constant
+        if let navBarHeigth = self.navigationController?.navigationBar.frame.height {
+            let window = UIApplication.shared.windows[0]
+            let topPadding = window.safeAreaInsets.top
+            self.navBarHeigth = navBarHeigth + topPadding
+        }
+        
         tableView.dataSource = dataSource
+        profileView.delegate = self
         
         self.cancellable = DefaultGetProfilesUseCase(profileRepository: DefaultProfileRepository())
             .execute()
             .sink(receiveCompletion: { completion in
                 print(completion)
-            }, receiveValue: {
-                self.updateProfiles(profiles: $0)
-                self.userName = $0[0].profile.name
-                DispatchQueue.main.async { self.navigationItem.title = self.userName }
+            }, receiveValue: { data in
+                DispatchQueue.main.async { [weak self] in
+                    self?.updateProfileContent(profiles: data)
+                    self?.updateProfile(profile: data[0])
+                    self?.navigationItem.title = data[0].profile.name
+                }
+                
                 guard let name = UserDefaults.standard.string(forKey: "Username") else { return }
-                DispatchQueue.main.async { self.navigationItem.title = name }
+                DispatchQueue.main.async {
+                    self.navigationItem.title = name                     
+                }
             })
-        self.navigationController?.isNavigationBarHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationItem.title = userName
-//        UserDefaults.standard.string(forKey: "Username")
+        
+        guard let name = UserDefaults.standard.string(forKey: "Username") else { return }
+        self.userName = name
+        self.navigationItem.title = self.userName
     }
     
     // MARK: - Scroll Logic
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if self.lastContentOffset < scrollView.contentOffset.y {
-            // Did move down
-            guard scrollView.contentOffset.y > 0,
-                scrollView.contentOffset.y <= 338,
-                profileCellIsReady == true else {
-                    return
-            }
-            
-            UIView.animate(withDuration: 0.50) { [weak self] in
-                self?.tableView.scrollToRow(at: IndexPath(row: 0, section: 1), at: .top, animated: false)
-                self?.navigationController?.isNavigationBarHidden = false
+        if scrollView.contentOffset.y <= 0 || scrollView.contentOffset.y <= 220 {
+            UIView.animate(withDuration: 1) {
+                self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.clear]
+                self.profileBotton.constant = 15
             }
         } else {
-            // Did move up
-            guard scrollView.contentOffset.y > 0,
-                  scrollView.contentOffset.y <= 358,
-                  profileCellIsReady == true else { return }
-            UIView.animate(withDuration: 0.50) { [weak self] in
-                self?.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
-                self?.navigationController?.isNavigationBarHidden = true
+            UIView.animate(withDuration: 1) {
+                self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+                self.profileBotton.constant = 100
             }
-        
         }
-    }
     
-    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        self.lastContentOffset = scrollView.contentOffset.y
-    }
-    
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 && indexPath.row == 0 {
-            profileCellIsReady = true
+        let offset = scrollView.contentOffset.y
+        let baseline = -navBarHeigth
+        
+        if offset < baseline {
+            profileTop.constant = offset
+            profileHeigth.constant = originalHeight + abs (baseline - offset)
+        } else {
+            let navOffset = offset + navBarHeigth
+            let profileBotton = baseline + originalHeight
+            if navOffset >= profileBotton {
+                profileTop.constant = baseline + abs(navOffset - profileBotton)
+            } else {
+                profileTop.constant = baseline
+            }
+            profileHeigth.constant = originalHeight
         }
     }
     
     override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let videoCell = cell as? ProfileContentTableViewCell else { return };
-        
+
         videoCell.playerLayer.player?.pause();
         videoCell.playerLayer.player?.replaceCurrentItem(with: nil)
     }
-    
+
     override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if !scrollView.isDecelerating && !scrollView.isDragging {
             playVideo()
         }
     }
-    
+
     override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if !decelerate {
             playVideo()
@@ -123,8 +136,16 @@ class ProfileTableViewController: UITableViewController, ProfileCellDelegate, Ed
     func profileEditionDidEnd() {
         tableView.reloadData()
         guard let name = UserDefaults.standard.string(forKey: "Username") else { return }
+        guard let biography = UserDefaults.standard.string(forKey: "Biography") else { return }
+        guard let nickname = UserDefaults.standard.string(forKey: "Nickname") else { return }
+        
+        self.profileView.profileUserName.text = name
+        self.profileView.profileBiography.text = biography
+        self.profileView.profileUniqueUserName.text = nickname
+        
         self.userName = name
-        self.navigationItem.title = self.userName 
+        
+        self.navigationItem.title = self.userName
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -134,43 +155,37 @@ class ProfileTableViewController: UITableViewController, ProfileCellDelegate, Ed
             editprofileVC.delegate = self
         }
     }
+    
+    func updateProfile(profile: ProfileWrapper) {
+        self.profileView.profileUserName.text = UserDefaults.standard.string(forKey: "Username") ?? profile.profile.name
+        self.profileView.profileBiography.text = UserDefaults.standard.string(forKey: "Biography") ?? profile.description
+        self.profileView.profileFollowers.text = "5000"
+        self.profileView.profileFollowing.text = "500"
+        self.profileView.profileViews.text = "321,115"
+    }
 }
 
 // MARK: - Table view data source
 extension ProfileTableViewController {
     func makeDataSource() -> UITableViewDiffableDataSource<Section, ProfileWrapper> {
-        let dataSource = UITableViewDiffableDataSource
-            <Section, ProfileWrapper>(tableView: tableView, cellProvider: { (tableView, indexPath, profileRow) -> UITableViewCell? in
-                if indexPath.section == 0 {
-                    let cell = tableView.dequeueReusableCell(withIdentifier: self.cellProfileRowIdentifier, for: indexPath) as! ProfileTableViewCell
-                    cell.profileUserName.text = UserDefaults.standard.string(forKey: "Username") ?? profileRow.profile.name
-                    cell.profileBiography.text = UserDefaults.standard.string(forKey: "Biography") ?? profileRow.description
-                    cell.profileFollowers.text = "5000"
-                    cell.profileFollowing.text = "500"
-                    cell.profileViews.text = "321,115"
-                    cell.delegate = self
-                    return cell
-                } else if indexPath.section == 1 {
-                    let cell = tableView.dequeueReusableCell(withIdentifier: self.cellProfileContentIdentifier, for: indexPath) as! ProfileContentTableViewCell
-                    let url = URL(string: profileRow.profile.img)
-                    cell.contentUserImage.kf.setImage(with: url)
-                    cell.contentUserName.text = profileRow.profile.name
-                    cell.contentUserNickname.text = profileRow.profile.userName
-                    cell.contentUserDescription.text = profileRow.description
-                    cell.setContentUserVideoPlayer(url: profileRow.recordVideo)
-                    return cell
-                } else {
-                    return nil
-                }
-            })
+        let dataSource = UITableViewDiffableDataSource<Section, ProfileWrapper>(tableView: tableView, cellProvider: { (tableView, indexPath, profileRow) -> UITableViewCell? in
+                let cell = tableView.dequeueReusableCell(withIdentifier: self.cellProfileContentIdentifier, for: indexPath) as! ProfileContentTableViewCell
+                let url = URL(string: profileRow.profile.img)
+                cell.contentUserImage.kf.setImage(with: url)
+                cell.contentUserName.text = profileRow.profile.name
+                cell.contentUserNickname.text = profileRow.profile.userName
+                cell.contentUserDescription.text = profileRow.description
+                cell.setContentUserVideoPlayer(url: profileRow.recordVideo)
+                return cell
+        })
+            
         return dataSource
     }
     
-    func updateProfiles(profiles: [ProfileWrapper]) {
+    func updateProfileContent(profiles: [ProfileWrapper]) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, ProfileWrapper>()
-        snapshot.appendSections([.profile, .content])
+        snapshot.appendSections([.content])
         snapshot.appendItems(profiles, toSection: .content)
-        snapshot.appendItems([profiles.first!], toSection: .profile)
         
         dataSource.apply(snapshot)
     }

@@ -1,8 +1,8 @@
 //
-//  ProfileTableViewCell.swift
+//  ProfileUIView.swift
 //  Technical Challenge Kanto
 //
-//  Created by Nicolás A. Rodríguez on 3/17/20.
+//  Created by Nicolás A. Rodríguez on 9/30/20.
 //  Copyright © 2020 Nicolás A. Rodríguez. All rights reserved.
 //
 
@@ -12,8 +12,7 @@ protocol ProfileCellDelegate: class {
     func callSegueFromCell()
 }
 
-@IBDesignable
-class ProfileTableViewCell: UITableViewCell {
+class ProfileUIView: UIView {
     weak var delegate: ProfileCellDelegate?
     @IBInspectable var degreeColor1: UIColor = UIColor.purple
     @IBInspectable var degreeColor2: UIColor = UIColor.systemPurple
@@ -24,6 +23,7 @@ class ProfileTableViewCell: UITableViewCell {
     @IBOutlet var profileBiography: UILabel!
     
     @IBOutlet var profileStackContainer: UIStackView!
+    
     @IBOutlet var profileFollowers: UILabel!
     @IBOutlet var profileFollowing: UILabel!
     @IBOutlet var profileViews: UILabel!
@@ -31,12 +31,11 @@ class ProfileTableViewCell: UITableViewCell {
     override func draw(_ rect: CGRect) {
         let gradient = CAGradientLayer()
         gradient.frame = frame
-        gradient.colors = [degreeColor1.cgColor,
-                           degreeColor2.cgColor]
-        gradient.startPoint = CGPoint(x: 0, y: 1)
-        gradient.endPoint = CGPoint(x: 1, y: 0)
-        //        gradient.mask = shape
-        self.contentView.layer.insertSublayer(gradient, at: 0)
+        gradient.colors = [degreeColor1.cgColor, degreeColor2.cgColor]
+        gradient.startPoint = CGPoint(x: 0, y: 0)
+        gradient.endPoint = CGPoint(x: 0, y: 1)
+        self.layer.insertSublayer(gradient, at: 0)
+        
         self.profileStackContainer.isLayoutMarginsRelativeArrangement = true
         self.profileStackContainer.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 7, leading: 20, bottom: 7, trailing: 20)
         
@@ -49,16 +48,4 @@ class ProfileTableViewCell: UITableViewCell {
     @IBAction func EditProfileButton(_ sender: UIButton) {
         delegate?.callSegueFromCell()
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
-    
 }
