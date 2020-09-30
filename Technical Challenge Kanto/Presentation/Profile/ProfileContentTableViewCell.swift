@@ -26,7 +26,7 @@ class ProfileContentTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.contentUserVideoPlayer.layer.addSublayer(self.playerLayer)
+        self.contentUserVideoPlayer.layer.insertSublayer(playerLayer, at: 0)
     }
 
     override func layoutSubviews() {

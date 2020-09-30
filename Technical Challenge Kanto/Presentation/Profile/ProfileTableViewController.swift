@@ -18,6 +18,7 @@ class ProfileTableViewController: UITableViewController, ProfileCellDelegate, Ed
     
     var profileCellIsReady = false
     var lastContentOffset: CGFloat = 0
+    var userName: String = ""
     
     private lazy var dataSource = makeDataSource()
     
@@ -37,7 +38,18 @@ class ProfileTableViewController: UITableViewController, ProfileCellDelegate, Ed
                 print(completion)
             }, receiveValue: {
                 self.updateProfiles(profiles: $0)
+                self.userName = $0[0].profile.name
+                DispatchQueue.main.async { self.navigationItem.title = self.userName }
+                guard let name = UserDefaults.standard.string(forKey: "Username") else { return }
+                DispatchQueue.main.async { self.navigationItem.title = name }
             })
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = userName
+//        UserDefaults.standard.string(forKey: "Username")
     }
     
     // MARK: - Scroll Logic
@@ -50,9 +62,20 @@ class ProfileTableViewController: UITableViewController, ProfileCellDelegate, Ed
                     return
             }
             
-            UIView.animate(withDuration: 0.25) { [weak self] in
+            UIView.animate(withDuration: 0.50) { [weak self] in
                 self?.tableView.scrollToRow(at: IndexPath(row: 0, section: 1), at: .top, animated: false)
+                self?.navigationController?.isNavigationBarHidden = false
             }
+        } else {
+            // Did move up
+            guard scrollView.contentOffset.y > 0,
+                  scrollView.contentOffset.y <= 358,
+                  profileCellIsReady == true else { return }
+            UIView.animate(withDuration: 0.50) { [weak self] in
+                self?.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+                self?.navigationController?.isNavigationBarHidden = true
+            }
+        
         }
     }
     
@@ -99,6 +122,9 @@ class ProfileTableViewController: UITableViewController, ProfileCellDelegate, Ed
     
     func profileEditionDidEnd() {
         tableView.reloadData()
+        guard let name = UserDefaults.standard.string(forKey: "Username") else { return }
+        self.userName = name
+        self.navigationItem.title = self.userName 
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
