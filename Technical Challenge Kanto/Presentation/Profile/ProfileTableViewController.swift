@@ -60,6 +60,11 @@ class ProfileTableViewController: UITableViewController, ProfileCellDelegate, Ed
                     self.navigationItem.title = name                     
                 }
             })
+        
+        guard let profileImageURL = UserDefaults.standard.url(forKey: "profileImage") else { return }
+        guard let data = try? Data(contentsOf: profileImageURL) else { return }
+        profileView.profileAvatarImageView.image = UIImage(data: data)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -146,6 +151,10 @@ class ProfileTableViewController: UITableViewController, ProfileCellDelegate, Ed
         self.userName = name
         
         self.navigationItem.title = self.userName
+        
+        guard let profileImageURL = UserDefaults.standard.url(forKey: "profileImage") else { return }
+        guard let data = try? Data(contentsOf: profileImageURL) else { return }
+        profileView.profileAvatarImageView.image = UIImage(data: data)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

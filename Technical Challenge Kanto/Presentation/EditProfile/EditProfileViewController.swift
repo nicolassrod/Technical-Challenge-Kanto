@@ -120,6 +120,17 @@ extension EditProfileViewController: UIImagePickerControllerDelegate, UINavigati
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[.editedImage] as? UIImage {
             profileImageView.image = pickedImage
+            
+            if let data = pickedImage.pngData() {
+                let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                let url = documents.appendingPathComponent("profileImage.png")
+                do {
+                    try data.write(to: url, options: .atomic)
+                    UserDefaults.standard.set(url, forKey: "profileImage")
+                } catch {
+                    print("Unable to Write Data to Disk (\(error))")
+                }
+            }
         }
         picker.dismiss(animated: true, completion: nil)
     }
